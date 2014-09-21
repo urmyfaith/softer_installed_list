@@ -1,0 +1,924 @@
+<!DOCTYPE html>
+<html>
+<meta http-equiv="Content-Type" content="text/html; charset=utf-8" /> 
+<head>
+    <title>Software-Install-List</title>
+<style>
+
+body {
+    width: 1024px;
+    margin: 40px auto;
+    font-family: 'trebuchet MS', 'Lucida sans', Arial;
+    font-size: 14px;
+    color: #444;
+}
+
+table {
+    *border-collapse: collapse; /* IE7 and lower */
+    border-spacing: 0;
+    width: 100%;    
+}
+
+.bordered {
+    border: solid #ccc 1px;
+    -moz-border-radius: 6px;
+    -webkit-border-radius: 6px;
+    border-radius: 6px;
+    -webkit-box-shadow: 0 1px 1px #ccc; 
+    -moz-box-shadow: 0 1px 1px #ccc; 
+    box-shadow: 0 1px 1px #ccc;         
+}
+
+.bordered tr:hover {
+    background: #fbf8e9;
+    -o-transition: all 0.1s ease-in-out;
+    -webkit-transition: all 0.1s ease-in-out;
+    -moz-transition: all 0.1s ease-in-out;
+    -ms-transition: all 0.1s ease-in-out;
+    transition: all 0.1s ease-in-out;     
+}    
+    
+.bordered td, .bordered th {
+    border-left: 1px solid #ccc;
+    border-top: 1px solid #ccc;
+    padding: 10px;
+    text-align: left;    
+}
+
+.bordered th {
+    background-color: #dce9f9;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#ebf3fc), to(#dce9f9));
+    background-image: -webkit-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:    -moz-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:     -ms-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:      -o-linear-gradient(top, #ebf3fc, #dce9f9);
+    background-image:         linear-gradient(top, #ebf3fc, #dce9f9);
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset; 
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;  
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+    border-top: none;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+}
+
+.bordered td:first-child, .bordered th:first-child {
+    border-left: none;
+}
+
+.bordered th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;
+}
+
+.bordered th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.bordered th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.bordered tr:last-child td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.bordered tr:last-child td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+
+
+
+/*----------------------*/
+
+.zebra td, .zebra th {
+    padding: 10px;
+    border-bottom: 1px solid #f2f2f2;    
+}
+
+.zebra tbody tr:nth-child(even) {
+    background: #f5f5f5;
+    -webkit-box-shadow: 0 1px 0 rgba(255,255,255,.8) inset; 
+    -moz-box-shadow:0 1px 0 rgba(255,255,255,.8) inset;  
+    box-shadow: 0 1px 0 rgba(255,255,255,.8) inset;        
+}
+
+.zebra th {
+    text-align: left;
+    text-shadow: 0 1px 0 rgba(255,255,255,.5); 
+    border-bottom: 1px solid #ccc;
+    background-color: #eee;
+    background-image: -webkit-gradient(linear, left top, left bottom, from(#f5f5f5), to(#eee));
+    background-image: -webkit-linear-gradient(top, #f5f5f5, #eee);
+    background-image:    -moz-linear-gradient(top, #f5f5f5, #eee);
+    background-image:     -ms-linear-gradient(top, #f5f5f5, #eee);
+    background-image:      -o-linear-gradient(top, #f5f5f5, #eee); 
+    background-image:         linear-gradient(top, #f5f5f5, #eee);
+}
+
+.zebra th:first-child {
+    -moz-border-radius: 6px 0 0 0;
+    -webkit-border-radius: 6px 0 0 0;
+    border-radius: 6px 0 0 0;  
+}
+
+.zebra th:last-child {
+    -moz-border-radius: 0 6px 0 0;
+    -webkit-border-radius: 0 6px 0 0;
+    border-radius: 0 6px 0 0;
+}
+
+.zebra th:only-child{
+    -moz-border-radius: 6px 6px 0 0;
+    -webkit-border-radius: 6px 6px 0 0;
+    border-radius: 6px 6px 0 0;
+}
+
+.zebra tfoot td {
+    border-bottom: 0;
+    border-top: 1px solid #fff;
+    background-color: #f1f1f1;  
+}
+
+.zebra tfoot td:first-child {
+    -moz-border-radius: 0 0 0 6px;
+    -webkit-border-radius: 0 0 0 6px;
+    border-radius: 0 0 0 6px;
+}
+
+.zebra tfoot td:last-child {
+    -moz-border-radius: 0 0 6px 0;
+    -webkit-border-radius: 0 0 6px 0;
+    border-radius: 0 0 6px 0;
+}
+
+.zebra tfoot td:only-child{
+    -moz-border-radius: 0 0 6px 6px;
+    -webkit-border-radius: 0 0 6px 6px
+    border-radius: 0 0 6px 6px
+}
+  
+</style>
+</head>
+
+<body>
+<h1>软件安装列表(Window7 32bit By-python):</h1>
+<table class="bordered">
+    <tr>
+        <th>#</th>        
+        <th>Software</th>
+        <th>Location</th>
+    </tr>
+
+<tr>
+    <td>1</td>
+    <td>Adobe AIR</td>
+    <td>c:\Program Files\Common Files\Adobe AIR\
+    </td>
+</tr>
+
+<tr>
+    <td>2</td>
+    <td>Adobe Flash Player 15 ActiveX</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>3</td>
+    <td>支付宝安全控件 4.3.0.3375</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>6</td>
+    <td>AutoHotkey 1.0.48.05</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>8</td>
+    <td>Adobe Community Help</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>9</td>
+    <td>Adobe Media Player</td>
+    <td>C:\Program Files\Adobe Media Player\
+    </td>
+</tr>
+
+<tr>
+    <td>11</td>
+    <td>EasyConnect</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>12</td>
+    <td>EditPlus 3.70 Build 340</td>
+    <td>C:\Program Files\EditPlus 3\
+    </td>
+</tr>
+
+<tr>
+    <td>13</td>
+    <td>Ethereal 0.10.14</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>14</td>
+    <td>Everything 1.3.4.686 (x86)</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>15</td>
+    <td>HP LaserJet Professional P1100-P1560-P1600 Series</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>16</td>
+    <td>Internet Download Manager</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>17</td>
+    <td>iPlot</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>18</td>
+    <td>KMSpico v9.2.3</td>
+    <td>D:\install\KMSpico\
+    </td>
+</tr>
+
+<tr>
+    <td>19</td>
+    <td>Lenovo Auto Scroll Utility</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>20</td>
+    <td>Python 2.7 matplotlib-1.3.1</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>21</td>
+    <td>MdCharm 1.1.6</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>22</td>
+    <td>Microsoft Security Essentials</td>
+    <td>C:\Program Files\Microsoft Security Client
+    </td>
+</tr>
+
+<tr>
+    <td>23</td>
+    <td>Python 2.7 MySQL-python-1.2.4b4</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>24</td>
+    <td>Python 2.7 numpy-1.8.1</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>25</td>
+    <td>Microsoft Visio Professional 2013</td>
+    <td>D:\install\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>26</td>
+    <td>On Screen Display</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>27</td>
+    <td>pdfFactory Pro</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>28</td>
+    <td>Python 2.7 PIL-1.1.7</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>29</td>
+    <td>Lenovo Power Management Driver</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>30</td>
+    <td>Microsoft Office Professional Plus 2007</td>
+    <td>C:\Program Files\Microsoft Office
+    </td>
+</tr>
+
+<tr>
+    <td>31</td>
+    <td>Python 2.7 pymongo-2.7.2</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>32</td>
+    <td>Python 2.7 pyparsing-2.0.2</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>33</td>
+    <td>Python 2.7 python-dateutil-2.2</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>34</td>
+    <td>Python 2.7 pytz-2014.4</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>35</td>
+    <td>QQ影像3.0</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>36</td>
+    <td>Tencent QQMail Plugin</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>37</td>
+    <td>QQ拼音输入法4.6</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>38</td>
+    <td>SangforHTP</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>39</td>
+    <td>SangforVNC</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>40</td>
+    <td>Python 2.7 six-1.7.3</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>41</td>
+    <td>Vim 7.4 (self-installing)</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>43</td>
+    <td>WinPcap 4.1.3</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>44</td>
+    <td>WinRAR 5.11 (32 位)</td>
+    <td>D:\install\WinRAR\
+    </td>
+</tr>
+
+<tr>
+    <td>45</td>
+    <td>Microsoft Visual C++ 2008 ATL Update kb973924 - x86 9.0.30729.4148</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>46</td>
+    <td>Microsoft_VC90_ATL_x86</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>47</td>
+    <td>腾讯QQ</td>
+    <td>C:\Program Files\Tencent\QQ\
+    </td>
+</tr>
+
+<tr>
+    <td>48</td>
+    <td>Python 2.7 pygame-1.9.2a0</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>49</td>
+    <td>Microsoft_VC90_CRT_x86</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>50</td>
+    <td>Adobe Community Help</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>51</td>
+    <td>Microsoft_VC80_ATL_x86</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>52</td>
+    <td>Microsoft Visual C++ 2010  x86 Redistributable - 10.0.30319</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>53</td>
+    <td>MSXML 4.0 SP3 Parser (KB2758694)</td>
+    <td>C:\Windows\system32\
+    </td>
+</tr>
+
+<tr>
+    <td>54</td>
+    <td>Intel(R) USB 3.0 eXtensible Host Controller Driver</td>
+    <td>C:\Program Files\Intel\Intel(R) USB 3.0 eXtensible Host Controller Driver
+    </td>
+</tr>
+
+<tr>
+    <td>55</td>
+    <td>Java 8 Update 5</td>
+    <td>C:\Program Files\Java\jre8\
+    </td>
+</tr>
+
+<tr>
+    <td>56</td>
+    <td>MongoDB 2.6.4</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>57</td>
+    <td>Java SE Development Kit 8 Update 5</td>
+    <td>C:\Program Files\Java\jdk1.8.0_05\
+    </td>
+</tr>
+
+<tr>
+    <td>58</td>
+    <td>应用宝</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>59</td>
+    <td>Microsoft Security Client</td>
+    <td>C:\Program Files\Microsoft Security Client\
+    </td>
+</tr>
+
+<tr>
+    <td>60</td>
+    <td>Microsoft Chart Controls for Microsoft .NET Framework 3.5 (KB2500170)</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>61</td>
+    <td>Microsoft .NET Framework 4.5.1</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>62</td>
+    <td>Java Auto Updater</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>63</td>
+    <td>Google 地球</td>
+    <td>C:\Program Files\Google\Google Earth\
+    </td>
+</tr>
+
+<tr>
+    <td>64</td>
+    <td>Mindjet MindManager 2012</td>
+    <td>C:\Program Files\Mindjet\MindManager 10\
+    </td>
+</tr>
+
+<tr>
+    <td>65</td>
+    <td>AutoCAD 2007 - Simplified Chinese</td>
+    <td>C:\Program Files\AutoCAD 2007\
+    </td>
+</tr>
+
+<tr>
+    <td>66</td>
+    <td>Microsoft_VC90_MFC_x86</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>67</td>
+    <td>Microsoft Visual C++ 2005 Redistributable</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>69</td>
+    <td>Microsoft Visual C++ 2005 Redistributable</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>70</td>
+    <td>Apache HTTP Server 2.2.15</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>71</td>
+    <td>Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>72</td>
+    <td>Microsoft Office Professional Plus 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>73</td>
+    <td>Microsoft Office Access MUI (Chinese (Simplified)) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>74</td>
+    <td>Microsoft Office Excel MUI (Chinese (Simplified)) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>75</td>
+    <td>Microsoft Office PowerPoint MUI (Chinese (Simplified)) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>76</td>
+    <td>Microsoft Office Publisher MUI (Chinese (Simplified)) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>77</td>
+    <td>Microsoft Office Outlook MUI (Chinese (Simplified)) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>78</td>
+    <td>Microsoft Office Word MUI (Chinese (Simplified)) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>79</td>
+    <td>Microsoft Office Proof (English) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>80</td>
+    <td>Microsoft Office Proof (Chinese (Simplified)) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>81</td>
+    <td>Microsoft Office IME (Chinese (Simplified)) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>82</td>
+    <td>Microsoft Office Proofing (Chinese (Simplified)) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>83</td>
+    <td>Microsoft Office InfoPath MUI (Chinese (Simplified)) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>84</td>
+    <td>Microsoft Office Shared MUI (Chinese (Simplified)) 2007</td>
+    <td>C:\Program Files\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>85</td>
+    <td>Microsoft Office Proofing Tools 2013 - English</td>
+    <td>D:\install\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>86</td>
+    <td>Microsoft Office 校对工具 2013 - 简体中文</td>
+    <td>D:\install\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>87</td>
+    <td>Microsoft Office Proofing (Chinese (Simplified)) 2013</td>
+    <td>D:\install\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>88</td>
+    <td>Microsoft Visio Professional 2013</td>
+    <td>D:\install\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>89</td>
+    <td>Microsoft Visio MUI (Chinese (Simplified)) 2013</td>
+    <td>D:\install\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>90</td>
+    <td>Microsoft Office Shared MUI (Chinese (Simplified)) 2013</td>
+    <td>D:\install\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>91</td>
+    <td>Microsoft Office OSM MUI (Chinese (Simplified)) 2013</td>
+    <td>D:\install\Microsoft Office\
+    </td>
+</tr>
+
+<tr>
+    <td>92</td>
+    <td>Microsoft_VC80_CRT_x86</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>93</td>
+    <td>Microsoft .NET Framework 4.5.1</td>
+    <td>C:\Windows\Microsoft.NET\Framework\v4.0.30319\SetupCache\v4.5.50938\
+    </td>
+</tr>
+
+<tr>
+    <td>94</td>
+    <td>Microsoft Visio SDK 2013</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>95</td>
+    <td>TortoiseSVN 1.8.7.25475 (32 bit)</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>96</td>
+    <td>Microsoft Visual C++ 2008 Redistributable - x86 9.0.30729.17</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>97</td>
+    <td>Lenovo Patch Utility</td>
+    <td>C:\Program Files\Common Files\Lenovo\LPU\
+    </td>
+</tr>
+
+<tr>
+    <td>98</td>
+    <td>Adobe Reader XI (11.0.03)</td>
+    <td>C:\Program Files\Adobe\Reader 11.0\Reader\
+    </td>
+</tr>
+
+<tr>
+    <td>99</td>
+    <td>Adobe AIR</td>
+    <td>c:\Program Files\Common Files\Adobe AIR\
+    </td>
+</tr>
+
+<tr>
+    <td>101</td>
+    <td>Camtasia Studio 7</td>
+    <td>D:\install\Camtasia Studio 7\
+    </td>
+</tr>
+
+<tr>
+    <td>102</td>
+    <td>Python 2.7.6</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>103</td>
+    <td>Microsoft_VC80_MFC_x86</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>105</td>
+    <td>Oracle VM VirtualBox 4.3.12</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>106</td>
+    <td>Microsoft_VC80_MFCLOC_x86</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>107</td>
+    <td>Adobe Media Player</td>
+    <td>C:\Program Files\Adobe Media Player
+    </td>
+</tr>
+
+<tr>
+    <td>108</td>
+    <td>MySQL Server 5.1</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>109</td>
+    <td>Intel(R) Processor Graphics</td>
+    <td>C:\Program Files\Intel\Intel(R) Processor Graphics
+    </td>
+</tr>
+
+<tr>
+    <td>110</td>
+    <td>Realtek High Definition Audio Driver</td>
+    <td>C:\Program Files\Realtek\Audio\HDA
+    </td>
+</tr>
+
+<tr>
+    <td>111</td>
+    <td>Intel(R) OpenCL CPU Runtime</td>
+    <td>C:\Program Files\Intel\OpenCL SDK\2.0
+    </td>
+</tr>
+
+<tr>
+    <td>112</td>
+    <td>百度云上传控件 2.0.0</td>
+    <td>NULL
+    </td>
+</tr>
+
+<tr>
+    <td>113</td>
+    <td>百度云管家</td>
+    <td>"D:\install\BaiduYunGuanjia"
+    </td>
+</tr>
+
+<tr>
+    <td>114</td>
+    <td>英雄联盟</td>
+    <td>NULL
+    </td>
+</tr>
+
+</table>
+</body>
+</html>
