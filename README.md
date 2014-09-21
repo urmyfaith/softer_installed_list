@@ -12,3 +12,7 @@ softer_installed_list
 * 生成文件保存为index.html
 
 * 示例地址:http://sharedoc.sinaapp.com/install-list/
+
+* gitbhub地址为:https://github.com/urmyfaith/softer_installed_list/
+
+* 运行不需要参数,双击softer_installed_list.py即可.(需要安装python2.x)
